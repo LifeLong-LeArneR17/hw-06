@@ -12,3 +12,25 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+
+const createMarkupPhoto = document.querySelector("ul.gallery");
+console.log(createMarkupPhoto);
+
+
+// images.forEach(el => {
+//   const photoElement = document.createElement("img")
+//   const { url, alt } = el;
+//   photoElement.src = url;
+//   photoElement.alt = alt;
+//   createMarkupPhoto.append(photoEl                                                                            ement)
+// })
+
+const photoList = images => {
+  return images
+    .map(({ url, alt }) => {
+      return `<li> <img src=${url} alt=${alt} /> </li>`
+    })
+    .join("")
+}
+createMarkupPhoto.insertAdjacentHTML('beforebegin', photoList(images));
