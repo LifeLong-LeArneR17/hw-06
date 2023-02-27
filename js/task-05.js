@@ -10,7 +10,9 @@ const textInfo = document.querySelector("#name-output");
 
 inputText.addEventListener("input", (event) => {
     textInfo.textContent = event.currentTarget.value;
-    if (textInfo === "") {
+    if (event.currentTarget.value === "") {
         textInfo.textContent = "Anonymous";
+    } else {
+      textInfo.textContent = event.currentTarget.value;
     }
 })
